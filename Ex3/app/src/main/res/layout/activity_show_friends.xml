@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/view_newFriendInfo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAlignment="center"
+        android:layout_marginTop="150dp"
+        android:layout_marginBottom="10dp"
+        android:text="@string/new_friend_information" />
+
+    <GridLayout
+        android:id="@+id/grid_newFriend"
+        android:layout_width="373dp"
+        android:layout_height="103dp">
+
+        <TextView
+            android:layout_width="102dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="8dp"
+            android:text="@string/new_name"
+            android:layout_marginStart="8dp" />
+
+        <EditText
+            android:id="@+id/edit_newName"
+            android:layout_width="121dp"
+            android:layout_height="wrap_content"
+            android:inputType="text" />
+
+        <TextView
+            android:layout_width="101dp"
+            android:layout_height="wrap_content"
+            android:layout_column="0"
+            android:layout_marginLeft="8dp"
+            android:layout_row="1"
+            android:text="@string/new_birthday"
+            android:layout_marginStart="8dp" />
+
+        <EditText
+            android:id="@+id/edit_newBirthday"
+            android:layout_width="122dp"
+            android:layout_height="wrap_content"
+            android:layout_column="1"
+            android:layout_row="1"
+            android:inputType="text" />
+
+    </GridLayout>
+
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        android:weightSum="1">
+
+        <Button
+            android:id="@+id/btn_cancel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="left"
+            android:layout_weight="0.93"
+            android:onClick="onClickCancel"
+            android:text="@string/cancel"
+            android:textSize="12sp" />
+
+        <Button
+            android:id="@+id/btn_addFriend"
+            android:layout_width="190dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right"
+            android:onClick="onClickNewFriend"
+            android:text="@string/add_new_friend"
+            android:textSize="12sp" />
+    </LinearLayout>
+</LinearLayout>

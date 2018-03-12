@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Ex5</string>
+    <string name="help_text">Vennligst skriv inn et tall mellom X og Y:</string>
+    <string name="send">Send</string>
+    <string name="restart">Start på nytt</string>
+    <string name="card_helper">Skriv inn kortnummer:</string>
+    <string name="name_helper">Skriv inn navn:</string>
+</resources>

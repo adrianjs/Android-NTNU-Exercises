@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">Ex3</string>
+    <string name="name_string">Name:</string>
+    <string name="name_placeholder">NAME_HERE</string>
+    <string name="birthday_string">Birthday:</string>
+    <string name="birthday_placeholder">BIRTHDAY_HERE</string>
+    <string name="change_user_information">Change friend information</string>
+    <string name="new_name">New name:</string>
+    <string name="new_birthday">New birthday:</string>
+    <string name="save_changes">Save changes</string>
+    <string name="select_friend">Select friend:</string>
+    <string name="cancel_changes">Discard changes</string>
+    <string name="add_new">Add new friend</string>
+    <string name="add_new_friend">Add new friend</string>
+    <string name="cancel">Cancel</string>
+    <string name="new_friend_information">New friend information:</string>
+</resources>

@@ -1,0 +1,95 @@
+<resources>
+    <string name="app_name">Ex4</string>
+    <string name="movie_title_1">Star Wars Episode I: The Phantom Menace</string>
+    <string name="movie_title_2">Star Wars Episode II: Attack of the Clones</string>
+    <string name="movie_title_3">Star Wars Episode III: Revenge of the Sith</string>
+    <string name="movie_title_4">Star Wars Episode IV: A New Hope</string>
+    <string name="movie_title_5">Star Wars Episode V: Empire Strikes Back</string>
+    <string name="movie_title_6">Star Wars Episode VI: Return of the Jedi</string>
+    <string name="movie_title_7">Star Wars Episode VII: The Force Awakens</string>
+    <string name="movie_title_8">Star Wars Episode VIII: The Last Jedi</string>
+    <string name="movie_title_9">Rogue One: A Star Wars Story</string>
+    <string name="movie_desc_1">
+        The first movie chronologically, this movie tells the story of how Obi-Wan Kenobi
+        first found Anakin Skywalker, the "Chosen One", and the events that lead to him joining
+        the Jedi Order. </string>
+    <string name="movie_desc_2">
+        Set ten years after the first movie, this tells the story of how Anakin grows into his role
+        in the Order, and is also the beginning of the Clone Wars (a rather good animated adaptation
+        of the Clone Wars exists).</string>
+    <string name="movie_desc_3">
+        This is the movie that rounds out the prequels, and it tells the story of Anakin\'s fall
+        to the Dark Side. Manipulated by Darth Sidious, he turns on his old master and the Jedi Order
+        in order to save his wife from dying. This culminates with him becoming Darth Vader.
+    </string>
+    <string name="movie_desc_4">
+        The first of the Star Wars movies to be released, it tells the story of Luke Skywalker.
+        He joins the Rebellion and meets Princess Leia, old man Obi-Wan, ruggedly handsome rogue
+        Han Solo and his companion Chewbacca.
+    </string>
+    <string name="movie_desc_5">
+        Luke\'s story continues in this movie, where he learns more of the ways of the Force from
+        Master Yoda. He also faces off with Darth Vader, and learns something very important about
+        his origins.
+    </string>
+    <string name="movie_desc_6">
+        Luke tries to retrieve his comrade Han Solo from the clutches of Jabba the Hutt, and also
+        leads a war against the Empire. He faces off with the man who turned his father to the
+        Dark Side, and finally frees the Galaxy from the clutches of the Sith.
+    </string>
+    <string name="movie_desc_7">
+        The new trilogy introduces us to Rey, Finn, Poe Dameron and Kylo Ren. Kylo Ren is Darth Vader\'s
+        grandson and desperately trying to live up to his name. A new threat has taken over the
+        galaxy in the ashes of the Empire.
+    </string>
+    <string name="movie_desc_8">
+        Rey has found Luke Skywalker, and is attempting to learn from him. However, Luke is reluctant,
+        and feels the galaxy would be better off without the Jedi. Kylo Ren and Rey deepen their
+        relationship, and there are major shifts in the power balance.
+    </string>
+    <string name="movie_desc_9">
+        Taking place between Episode III and Episode IV, this movie tells the tale of Jyn Erso,
+        the daughter of the creator of the Death Star. She helps the rebels acquire the plans,
+        and tries to get her father back from the Empire that kidnapped him.
+    </string>
+    <string name="movie_covers">Movie covers</string>
+    <string name="choose_movie">Choose movie:</string>
+    <string name="previous">Previous</string>
+    <string name="next">Next</string>
+
+    <string-array name="movie_titles">
+        <item>@string/movie_title_1</item>
+        <item>@string/movie_title_2</item>
+        <item>@string/movie_title_3</item>
+        <item>@string/movie_title_4</item>
+        <item>@string/movie_title_5</item>
+        <item>@string/movie_title_6</item>
+        <item>@string/movie_title_7</item>
+        <item>@string/movie_title_8</item>
+        <item>@string/movie_title_9</item>
+    </string-array>
+
+    <string-array name="movie_descriptions">
+        <item>@string/movie_desc_1</item>
+        <item>@string/movie_desc_2</item>
+        <item>@string/movie_desc_3</item>
+        <item>@string/movie_desc_4</item>
+        <item>@string/movie_desc_5</item>
+        <item>@string/movie_desc_6</item>
+        <item>@string/movie_desc_7</item>
+        <item>@string/movie_desc_8</item>
+        <item>@string/movie_desc_9</item>
+    </string-array>
+
+    <array name="movie_covers">
+        <item>@drawable/star_wars_1</item>
+        <item>@drawable/star_wars_2</item>
+        <item>@drawable/star_wars_3</item>
+        <item>@drawable/star_wars_4</item>
+        <item>@drawable/star_wars_5</item>
+        <item>@drawable/star_wars_6</item>
+        <item>@drawable/star_wars_7</item>
+        <item>@drawable/star_wars_8</item>
+        <item>@drawable/star_wars_9</item>
+    </array>
+</resources>

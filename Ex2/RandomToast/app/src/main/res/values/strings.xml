@@ -1,0 +1,6 @@
+<resources>
+    <string name="app_name">RandomToast</string>
+    <string name="random_int">Random int</string>
+    <string name="upper_limit">Upper limit from intent: %1$d</string>
+    <string name="upper_limit_start">Upper limit:</string>
+</resources>
