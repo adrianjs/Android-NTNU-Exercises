@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">Ex6Client</string>
+    <string name="input_a">Input A</string>
+    <string name="input_b">Input B</string>
+    <string name="start_client">Start client</string>
+    <string name="send">Send</string>
+    <string name="stop_client">Stop client</string>
 </resources>
