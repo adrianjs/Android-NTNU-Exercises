@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">Ex6Server</string>
+    <string name="start">Start server</string>
+    <string name="stop_server">Stop server</string>
 </resources>
