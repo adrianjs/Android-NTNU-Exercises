@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <fragment
+            android:id="@+id/fragment_settings"
+            android:name="com.example.adrst.ex7.SettingsFragment"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_margin="20dp"
+            android:visibility="invisible" />
+
+        <Button
+            android:id="@+id/btnSave"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="onClickSave"
+            android:text="@string/save" />
+
+    </LinearLayout>
+</android.support.constraint.ConstraintLayout>

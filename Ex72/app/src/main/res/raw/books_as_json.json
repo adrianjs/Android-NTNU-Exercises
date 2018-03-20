@@ -1,0 +1,36 @@
+{
+  "books": [
+    {
+      "author": "Richard Dawkins",
+      "title": "The God Delusion"
+    },
+    {
+      "author": "Stephen Hawking",
+      "title": "The Theory of Everything"
+    },
+    {
+      "author": "George R. R. Martin",
+      "title": "A Feast for Crows"
+    },
+    {
+      "author": "James Joyce",
+      "title": "Ulysses"
+    },
+    {
+      "author": "Homer",
+      "title": "The Odyssey"
+    },
+    {
+      "author": "Leo Tolstoy",
+      "title": "War and Peace"
+    },
+    {
+      "author": "Dante Alighieri",
+      "title": "The Divine Comedy"
+    },
+    {
+      "author": "Miguel de Cervantes",
+      "title": "Don Quixote"
+    }
+  ]
+}

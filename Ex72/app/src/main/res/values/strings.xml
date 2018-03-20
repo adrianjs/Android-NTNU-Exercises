@@ -1,0 +1,40 @@
+<resources>
+    <string name="app_name">Books</string>
+
+    <string name="action_settings">Settings</string>
+    <string name="show_titles">Show titles</string>
+    <string name="show_authors">Show authors</string>
+    <string name="db_placeholder">DB TEST</string>
+    <string name="save">Save</string>
+    <string name="title_activity_settings">Settings</string>
+
+    <string name="color_blue_name">Blue</string>
+    <string name="color_red_name">Red</string>
+    <string name="color_green_name">Green</string>
+    <string name="color_yellow_name">Yellow</string>
+    <string name="color_cyan_name">Cyan</string>
+
+    <string name="color_blue_value">#3879E2</string>
+    <string name="color_red_value">#d13e3e</string>
+    <string name="color_green_value">#67b764</string>
+    <string name="color_yellow_value">#fce562</string>
+    <string name="color_cyan_value">#77e5df</string>
+
+    <string-array name="color_names">
+        <item>@string/color_blue_name</item>
+        <item>@string/color_red_name</item>
+        <item>@string/color_green_name</item>
+        <item>@string/color_yellow_name</item>
+        <item>@string/color_cyan_name</item>
+    </string-array>
+
+    <string-array name="color_values">
+        <item>@string/color_blue_value</item>
+        <item>@string/color_red_value</item>
+        <item>@string/color_green_value</item>
+        <item>@string/color_yellow_value</item>
+        <item>@string/color_cyan_value</item>
+    </string-array>
+
+    <string name="bcHelper">Background Color: </string>
+</resources>
