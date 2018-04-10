@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">PegSolitaire</string>
+    <string name="action_settings">Innstillinger</string>
+    <string name="title_activity_main_menu">Peg Solitaire</string>
+    <string name="button_finish_text">Avslutt spillet</string>
+    <string name="textview_score_text">32</string>
+    <string name="button_play_text">Start spillet</string>
+    <string name="game_over">Spillet er over</string>
+</resources>
