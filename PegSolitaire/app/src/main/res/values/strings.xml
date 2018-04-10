@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">PegSolitaire</string>
+    <string name="action_settings">Settings</string>
+
+    <string name="title_activity_main_menu">Peg Solitaire</string>
+    <string name="button_play_text">Play game</string>
+
+    <string name="button_finish_text">Finish game</string>
+    <string name="textview_score_text">32</string>
+
+    <string name="game_over">Game Over</string>
+    <string name="score_text">You had %1$d pegs left!</string>
+</resources>
