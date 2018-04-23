@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_height="match_parent"
+    android:layout_width="match_parent">
+
+    <TextView
+        android:id="@+id/helper_language"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="67dp"
+        android:text="@string/select_language" />
+
+    <ImageButton
+        android:id="@+id/button_norway"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="163dp"
+        app:srcCompat="@drawable/norway_round_icon_64"
+        android:contentDescription="@string/norwegian_flag"
+        android:onClick="onClickNorway"/>
+
+    <ImageButton
+        android:id="@+id/button_england"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="170dp"
+        app:srcCompat="@drawable/united_kingdom_round_icon_64"
+        android:contentDescription="@string/british_flag"
+        android:onClick="onClickUK"/>
+
+</RelativeLayout>

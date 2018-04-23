@@ -28,4 +28,19 @@ public class MainMenuActivity extends AppCompatActivity {
         Intent intent = new Intent(this, GameActivity.class);
         startActivity(intent);
     }
+
+    public void onClickScores(View view) {
+        Intent intent = new Intent(this, ScoreActivity.class);
+        startActivity(intent);
+    }
+
+    public void onClickSettings(View view) {
+        Intent intent = new Intent(this, SettingsActivity.class);
+        startActivity(intent);
+    }
+
+    public void onClickTutorial(View view) {
+        Intent intent = new Intent(this, TutorialActivity.class);
+        startActivity(intent);
+    }
 }

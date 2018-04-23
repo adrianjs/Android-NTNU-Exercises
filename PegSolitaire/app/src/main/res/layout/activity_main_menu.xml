@@ -14,8 +14,38 @@
     <Button
         android:id="@+id/button_play"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/button_play_text"
-        android:onClick="onClickPlay" />
+        android:layout_height="89dp"
+        android:onClick="onClickPlay"
+        android:text="@string/button_play_text" />
+
+    <Button
+        android:id="@+id/button_tutorial"
+        android:layout_width="match_parent"
+        android:layout_height="89dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="20dp"
+        android:onClick="onClickTutorial"
+        android:text="@string/tutorial" />
+
+    <Button
+        android:id="@+id/button_settings2"
+        android:layout_width="match_parent"
+        android:layout_height="89dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="136dp"
+        android:onClick="onClickSettings"
+        android:text="@string/settings" />
+
+    <Button
+        android:id="@+id/button_score"
+        android:layout_width="match_parent"
+        android:layout_height="89dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="135dp"
+        android:onClick="onClickScores"
+        android:text="@string/high_scores" />
 
 </RelativeLayout>

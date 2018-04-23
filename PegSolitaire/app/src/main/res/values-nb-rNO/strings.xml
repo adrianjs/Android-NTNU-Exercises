@@ -2,9 +2,17 @@
 <resources>
     <string name="app_name">PegSolitaire</string>
     <string name="action_settings">Innstillinger</string>
-    <string name="title_activity_main_menu">Peg Solitaire</string>
+    <string name="title_activity_main_menu">Huleboerspillet</string>
     <string name="button_finish_text">Avslutt spillet</string>
     <string name="textview_score_text">32</string>
     <string name="button_play_text">Start spillet</string>
     <string name="game_over">Spillet er over</string>
+    <string name="score_text">Du hadde %1$d brikker igjen!</string>
+    <string name="settings">Innstillinger</string>
+    <string name="high_scores">Beste resultater</string>
+    <string name="norwegian_flag">Norsk flagg</string>
+    <string name="british_flag">Britisk flagg</string>
+    <string name="select_language">Velg språk</string>
+    <string name="title_activity_settings">Innstillinger</string>
+    <string name="title_activity_score">Beste resultater</string>
 </resources>
