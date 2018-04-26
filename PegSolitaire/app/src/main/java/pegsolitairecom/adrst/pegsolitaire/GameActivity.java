@@ -1,10 +1,12 @@
 package pegsolitairecom.adrst.pegsolitaire;
 
 import android.content.DialogInterface;
+import android.content.SharedPreferences;
 import android.graphics.drawable.Drawable;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.DragEvent;
 import android.view.Menu;
 import android.view.MotionEvent;
@@ -13,9 +15,20 @@ import android.widget.TableLayout;
 import android.widget.TableRow;
 import android.widget.TextView;
 
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Date;
+import java.util.List;
+
 public class GameActivity extends AppCompatActivity {
 
+    public static final String TAG = "GameActivity";
+
     private Drawable defaultSquare;
+    private SharedPreferences gamePrefs;
+    public static final String GAME_PREFS = "HighScores";
 
     private TableLayout gameTableLayout;
     private PegLayout[][] squares = new PegLayout[7][7];
@@ -23,12 +36,13 @@ public class GameActivity extends AppCompatActivity {
     private PegView[][] pieces = new PegView[7][7];
     private TextView scoreView;
 
-    private int score = 32;
+    private int score;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_game);
+        gamePrefs = getSharedPreferences(GAME_PREFS, 0);
 
         defaultSquare = getResources().getDrawable(R.drawable.square);
         gameTableLayout = findViewById(R.id.game_table_layout);
@@ -135,6 +149,7 @@ public class GameActivity extends AppCompatActivity {
         builder.setPositiveButton("Ok", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialogInterface, int i) {
+                setHighScore();
                 GameActivity.this.finish();
             }
         });
@@ -143,13 +158,49 @@ public class GameActivity extends AppCompatActivity {
         alert.show();
     }
 
+    private void setHighScore() {
+        int currentScore = getScore();
+        if (currentScore > 0) {
+            SharedPreferences.Editor scoreEdit = gamePrefs.edit();
+            DateFormat dateForm = new SimpleDateFormat("dd MMMM yyyy");
+            String dateOutput = dateForm.format(new Date());
+            String scores = gamePrefs.getString("highScores", "");
+            if (scores.length() > 0) {
+                List<Score> scoreStrings = new ArrayList<Score>();
+                String[] exScores = scores.split("\\|");
+                for (String eSc : exScores) {
+                    String[] parts = eSc.split(" - ");
+                    scoreStrings.add(new Score(parts[0], Integer.parseInt(parts[1])));
+                }
+                Score newScore = new Score(dateOutput, currentScore);
+                scoreStrings.add(newScore);
+                Collections.sort(scoreStrings);
+                StringBuilder scoreBuild = new StringBuilder("");
+                for (int s = 0; s < scoreStrings.size(); s++) {
+                    if (s > 10) break; // only want ten
+                    if (s > 0) scoreBuild.append("|"); // pipe separate the score strings
+                    scoreBuild.append(scoreStrings.get(s).getScoreText());
+                }
+                // write to prefs
+                scoreEdit.putString("highScores", scoreBuild.toString());
+                scoreEdit.commit();
+                Log.i(TAG, "setHighScore: Added current score to HS list");
+            } else {
+                scoreEdit.putString("highScores", "" + dateOutput + " - " + currentScore);
+                scoreEdit.commit();
+                Log.i(TAG, "setHighScore: Created HS list");
+            }
+        }
+    }
+
     private final class PegTouchListener implements View.OnTouchListener {
         @Override
         public boolean onTouch(View view, MotionEvent motionEvent) {
             if (motionEvent.getAction() == MotionEvent.ACTION_DOWN) {
+                view.performClick();
                 View.DragShadowBuilder shadowBuilder = new View.DragShadowBuilder(view);
                 view.startDrag(null, shadowBuilder, view, 0);
-                view.setVisibility(View.INVISIBLE);
+                //view.setVisibility(View.INVISIBLE);
                 return true;
             } else {
               return false;

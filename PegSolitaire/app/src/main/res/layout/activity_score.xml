@@ -3,16 +3,11 @@
     android:layout_height="match_parent"
     android:layout_width="match_parent" >
 
-
-    <ScrollView
+    <TextView
         android:id="@+id/score_list"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_centerInParent="true">
+        android:layout_width="172dp"
+        android:layout_height="195dp"
+        android:layout_centerInParent="true"
+        android:text="TextView" />
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical" />
-    </ScrollView>
 </RelativeLayout>

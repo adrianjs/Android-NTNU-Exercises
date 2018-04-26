@@ -15,4 +15,6 @@
     <string name="select_language">Velg språk</string>
     <string name="title_activity_settings">Innstillinger</string>
     <string name="title_activity_score">Beste resultater</string>
+    <string name="tutorial">Hjelp</string>
+    <string name="tutorial_text">Spillet spilles ved å hoppe over brikker til åpne rom. Brikkene kan hoppe vannrett og loddrett. Spillet avsluttes når det ikke er flere trekk igjen, og resultatet er basert på tiden det tok og hvor mange brikker som er igjen på brettet. Du kan velge mellom to brett, som er ganske like i vanskelighetsgrad.</string>
 </resources>

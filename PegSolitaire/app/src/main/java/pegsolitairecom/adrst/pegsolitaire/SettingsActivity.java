@@ -4,11 +4,14 @@ import android.content.res.Configuration;
 import android.content.res.Resources;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 
 import java.util.Locale;
 
 public class SettingsActivity extends AppCompatActivity {
+
+    public static final String TAG = "SettingsActivity";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,6 +25,7 @@ public class SettingsActivity extends AppCompatActivity {
         config.setLocale(locale);
         Resources res = getBaseContext().getResources();
         res.updateConfiguration(config, res.getDisplayMetrics());
+        Log.i(TAG, "onClickNorway: Endret til norsk språk");
     }
 
     public void onClickUK(View view) {
@@ -30,5 +34,6 @@ public class SettingsActivity extends AppCompatActivity {
         config.setLocale(locale);
         Resources res = getBaseContext().getResources();
         res.updateConfiguration(config, res.getDisplayMetrics());
+        Log.i(TAG, "onClickUK: Language changed to English");
     }
 }
