@@ -7,7 +7,7 @@
     <string name="textview_score_text">32</string>
     <string name="button_play_text">Start spillet</string>
     <string name="game_over">Spillet er over</string>
-    <string name="score_text">Du hadde %1$d brikker igjen!</string>
+    <string name="score_text">Din poengsum er %1$d. Du brukte %2$d sekunder.</string>
     <string name="settings">Innstillinger</string>
     <string name="high_scores">Beste resultater</string>
     <string name="norwegian_flag">Norsk flagg</string>
@@ -17,4 +17,6 @@
     <string name="title_activity_score">Beste resultater</string>
     <string name="tutorial">Hjelp</string>
     <string name="tutorial_text">Spillet spilles ved å hoppe over brikker til åpne rom. Brikkene kan hoppe vannrett og loddrett. Spillet avsluttes når det ikke er flere trekk igjen, og resultatet er basert på tiden det tok og hvor mange brikker som er igjen på brettet. Du kan velge mellom to brett, som er ganske like i vanskelighetsgrad.</string>
+    <string name="play_standard">Spill et standard brett</string>
+    <string name="play_square">Spill et firkantet brett</string>
 </resources>

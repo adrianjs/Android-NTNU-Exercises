@@ -66,7 +66,6 @@ public class PegView extends android.support.v7.widget.AppCompatImageView {
                 newSquare.addView(this);
                 this.row = newRow;
                 this.col = newCol;
-                this.setVisibility(View.VISIBLE);
                 return true;
             }
         }

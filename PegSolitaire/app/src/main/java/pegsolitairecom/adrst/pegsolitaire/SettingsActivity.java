@@ -6,6 +6,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.Toast;
 
 import java.util.Locale;
 
@@ -25,6 +26,7 @@ public class SettingsActivity extends AppCompatActivity {
         config.setLocale(locale);
         Resources res = getBaseContext().getResources();
         res.updateConfiguration(config, res.getDisplayMetrics());
+        Toast.makeText(this, "Språk endret til norsk", Toast.LENGTH_LONG).show();
         Log.i(TAG, "onClickNorway: Endret til norsk språk");
     }
 
@@ -34,6 +36,7 @@ public class SettingsActivity extends AppCompatActivity {
         config.setLocale(locale);
         Resources res = getBaseContext().getResources();
         res.updateConfiguration(config, res.getDisplayMetrics());
+        Toast.makeText(this, "Language changed to English", Toast.LENGTH_LONG).show();
         Log.i(TAG, "onClickUK: Language changed to English");
     }
 }

@@ -12,6 +12,7 @@ import android.view.DragEvent;
 import android.view.Menu;
 import android.view.MotionEvent;
 import android.view.View;
+import android.widget.Chronometer;
 import android.widget.TableLayout;
 import android.widget.TableRow;
 import android.widget.TextView;
@@ -23,8 +24,7 @@ import java.util.Collections;
 import java.util.Date;
 import java.util.List;
 
-public class GameActivity extends AppCompatActivity {
-
+public class SquareGameActivity extends AppCompatActivity {
     public static final String TAG = "GameActivity";
 
     private Drawable defaultSquare;
@@ -44,7 +44,7 @@ public class GameActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_game);
+        setContentView(R.layout.activity_square_game);
         gamePrefs = getSharedPreferences(GAME_PREFS, 0);
 
         defaultSquare = getResources().getDrawable(R.drawable.square);
@@ -58,34 +58,31 @@ public class GameActivity extends AppCompatActivity {
          * Loops through rows and columns to create TableRows and the Views inside
          * them, Sets rows and columns of PegLayouts and PegViews
          */
-        for (int r = 0; r < 7; r++) {
+        for (int r = 0; r < 6; r++) {
             row[r] = new TableRow(this);
-            for (int c = 0; c < 7; c++) {
-                if (!((r == 0 || r == 1 || r == 5 || r == 6) &&
-                        (c == 0 || c == 1 || c == 5 || c == 6))) {
-                    squares[r][c] = new PegLayout(this, r, c);
-                    squares[r][c].setBackground(defaultSquare);
-                    squares[r][c].setOnDragListener(new SquareDragListener());
-                    if (!((r == 3) && (c == 3))) {
-                        pieces[r][c] = new PegView(this, r, c);
-                        pieces[r][c].setImageResource(R.drawable.peg);
-                        pieces[r][c].setLayoutParams(new TableLayout.LayoutParams(height, width));
-                        pieces[r][c].setOnTouchListener(new PegTouchListener());
-                        squares[r][c].addView(pieces[r][c]);
-                    }
-                    row[r].addView(squares[r][c]);
-                    TableRow.LayoutParams params = (TableRow.LayoutParams) squares[r][c].getLayoutParams();
-                    params.column = c;
-                    params.height = height;
-                    params.width = width;
-                    squares[r][c].setLayoutParams(params);
+            for (int c = 0; c < 6; c++) {
+                squares[r][c] = new PegLayout(this, r, c);
+                squares[r][c].setBackground(defaultSquare);
+                squares[r][c].setOnDragListener(new SquareGameActivity.SquareDragListener());
+                if (!((r == 2) && (c == 3))) {
+                    pieces[r][c] = new PegView(this, r, c);
+                    pieces[r][c].setImageResource(R.drawable.peg);
+                    pieces[r][c].setLayoutParams(new TableLayout.LayoutParams(height, width));
+                    pieces[r][c].setOnTouchListener(new SquareGameActivity.PegTouchListener());
+                    squares[r][c].addView(pieces[r][c]);
                 }
+                row[r].addView(squares[r][c]);
+                TableRow.LayoutParams params = (TableRow.LayoutParams) squares[r][c].getLayoutParams();
+                params.column = c;
+                params.height = height;
+                params.width = width;
+                squares[r][c].setLayoutParams(params);
             }
             gameTableLayout.addView(row[r], new TableRow.LayoutParams(TableRow.LayoutParams.WRAP_CONTENT, TableRow.LayoutParams.WRAP_CONTENT));
         }
         scoreView = findViewById(R.id.textview_score);
         scoreView.setText(Integer.toString(getScore()));
-        pegsLeft = 32;
+        pegsLeft = 35;
     }
 
     @Override
@@ -140,8 +137,8 @@ public class GameActivity extends AppCompatActivity {
     }
 
     public boolean gameDone() {
-        for (int r = 0; r < 7; r++) {
-            for (int c = 0; c < 7; c++) {
+        for (int r = 0; r < 6; r++) {
+            for (int c = 0; c < 6; c++) {
                 if (squares[r][c].isEmpty()) {
                     continue;
                 }
@@ -177,7 +174,7 @@ public class GameActivity extends AppCompatActivity {
             @Override
             public void onClick(DialogInterface dialogInterface, int i) {
                 setHighScore();
-                GameActivity.this.finish();
+                SquareGameActivity.this.finish();
             }
         });
 
@@ -229,7 +226,7 @@ public class GameActivity extends AppCompatActivity {
                 view.startDrag(null, shadowBuilder, view, 0);
                 return true;
             } else {
-              return false;
+                return false;
             }
         }
     }
@@ -260,6 +257,7 @@ public class GameActivity extends AppCompatActivity {
                     if (pegView.move(oldSquare, newSquare, getSquares())) {
                         int score = getScore();
                         score += 100;
+                        pegsLeft--;
                         setScore(score);
                         updateScoreView();
                     }

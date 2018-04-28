@@ -25,7 +25,7 @@ public class MainMenuActivity extends AppCompatActivity {
      *
      */
     public void onClickPlay(View view) {
-        Intent intent = new Intent(this, GameActivity.class);
+        Intent intent = new Intent(this, MapActivity.class);
         startActivity(intent);
     }
 
