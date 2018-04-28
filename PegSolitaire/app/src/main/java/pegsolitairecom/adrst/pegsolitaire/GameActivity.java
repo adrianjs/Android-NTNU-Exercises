@@ -139,6 +139,9 @@ public class GameActivity extends AppCompatActivity {
         scoreView.setText(Integer.toString(getScore()));
     }
 
+    /**
+     * Function I made
+     */
     public boolean gameDone() {
         for (int r = 0; r < 7; r++) {
             for (int c = 0; c < 7; c++) {
@@ -147,11 +150,13 @@ public class GameActivity extends AppCompatActivity {
                 }
                 PegLayout oldSquare = squares[r][c];
                 PegView pegView = pieces[r][c];
-                if (pegView.move(oldSquare, new PegLayout(this, r, c - 2), getSquares())
-                        || pegView.move(oldSquare, new PegLayout(this, r, c + 2), getSquares())
-                        || pegView.move(oldSquare, new PegLayout(this, r + 2, c), getSquares())
-                        || pegView.move(oldSquare, new PegLayout(this, r - 2, c), getSquares())) {
-                    return false;
+                if (r > 2 && c > 2){
+                    if (pegView.canMove(oldSquare, new PegLayout(this, r, c - 2), getSquares())
+                            || pegView.canMove(oldSquare, new PegLayout(this, r, c + 2), getSquares())
+                            || pegView.canMove(oldSquare, new PegLayout(this, r + 2, c), getSquares())
+                            || pegView.canMove(oldSquare, new PegLayout(this, r - 2, c), getSquares())) {
+                        return false;
+                    }
                 }
             }
         }
@@ -170,9 +175,10 @@ public class GameActivity extends AppCompatActivity {
         long finishTime = SystemClock.elapsedRealtime();
         long elapsedTime = finishTime - startTime;
         double elapsedSeconds = elapsedTime / 1000.0;
-        int finalScore = getScore() + (20000 / (int)elapsedSeconds);
+        int score = getScore();
+        int finalScore = score + (200000 / (int)elapsedSeconds);
         builder.setTitle(R.string.game_over);
-        builder.setMessage(String.format(getResources().getString(R.string.score_text), finalScore, elapsedSeconds));
+        builder.setMessage(String.format(getResources().getString(R.string.score_text), finalScore, (int)elapsedSeconds));
         builder.setPositiveButton("Ok", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialogInterface, int i) {
@@ -260,6 +266,7 @@ public class GameActivity extends AppCompatActivity {
                     if (pegView.move(oldSquare, newSquare, getSquares())) {
                         int score = getScore();
                         score += 100;
+                        pegsLeft--;
                         setScore(score);
                         updateScoreView();
                     }

@@ -41,6 +41,25 @@ public class PegView extends android.support.v7.widget.AppCompatImageView {
         return col;
     }
 
+    public boolean canMove(PegLayout oldSquare, PegLayout newSquare, PegLayout[][] squares) {
+        int newRow = newSquare.getRow();
+        int newCol = newSquare.getCol();
+
+        int oldRow = oldSquare.getRow();
+        int oldCol = oldSquare.getCol();
+
+        if (newSquare.isEmpty()) {
+            if (((Math.abs(newRow - oldRow) == 2) && (newCol == oldCol)) ||
+                    (Math.abs(newCol - oldCol) == 2) && (newRow == oldRow)) {
+                return (oldCol - newCol == -2) && (!squares[newRow][newCol - 1].isEmpty()) ||
+                        ((oldCol - newCol == 2) && (!squares[newRow][newCol + 1].isEmpty())) ||
+                        ((oldRow - newRow == -2) && (!squares[newRow - 1][newCol].isEmpty())) ||
+                        ((oldRow - newRow == 2) && (!squares[newRow + 1][newCol].isEmpty()));
+            }
+        }
+        return false;
+    }
+
     public boolean move(PegLayout oldSquare, PegLayout newSquare, PegLayout[][] squares) {
         int newRow = newSquare.getRow();
         int newCol = newSquare.getCol();
